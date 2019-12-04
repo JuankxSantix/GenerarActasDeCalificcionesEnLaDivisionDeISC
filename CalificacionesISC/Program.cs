@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 
 namespace CalificacionesISC
@@ -77,7 +76,7 @@ namespace CalificacionesISC
                     ArchivoCalificacionesFinalesISC.WriteLine("----------------------------------------------------------------------------------------------------------------------");
                     ArchivoCalificacionesFinalesISC.WriteLine("|Nombre del docente:\t\t|MIDS. Adrian Chávez Cruz \t\t|\tClave de grupo:\t\t|1\t|");
                     ArchivoCalificacionesFinalesISC.WriteLine("----------------------------------------------------------------------------------------------------------------------");
-                    ArchivoCalificacionesFinalesISC.WriteLine("|Nombre del (la) Estudiante:\t\t|Me Nane\t\t|\tFecha de aplicacion:\t\t|4 de enero\t|");
+                    ArchivoCalificacionesFinalesISC.WriteLine("|Nombre del (la) Estudiante:\t\t|Me Name\t\t|\tFecha de aplicacion:\t\t|4 de enero\t|");
                     ArchivoCalificacionesFinalesISC.WriteLine("----------------------------------------------------------------------------------------------------------------------");
                     ArchivoCalificacionesFinalesISC.WriteLine("|        Evidencia:\t\t|Proyecto\t\t|\tDuracion:\t\t|NA\t|");
                     ArchivoCalificacionesFinalesISC.WriteLine("----------------------------------------------------------------------------------------------------------------------");
