@@ -8,9 +8,10 @@ namespace CalificacionesISC
     {
         public static void Main()
         {
-            int Respuesta;
+            bool salir=false;
             do
             {
+            int Respuesta;
                 Console.Clear();
                 Console.WriteLine("\t¿Que decea hacer?");
                 Console.WriteLine("---------------------------------------------");
@@ -35,21 +36,19 @@ namespace CalificacionesISC
                         break;
                     case 4:
                         Console.Clear();
-
                         Console.WriteLine("\n-----------------------------------------------------------------");
                         Console.WriteLine("\t\tGracias por su preferencia");
                         Console.WriteLine("-----------------------------------------------------------------");
                         Console.ReadKey();
+                        Respuesta = 4;
+                        salir = true;
                         break;
                     default:
                         Console.WriteLine("Esa no es una opcion correcta\nIntenta de nuevo");
                         break;
                 }
 
-                if (Respuesta == 4)
-                    break;
-
-            } while (Respuesta != 4);
+            } while (!salir);
 
 
         }
@@ -69,7 +68,25 @@ namespace CalificacionesISC
                 {
                     StreamWriter ArchivoCalificacionesFinalesISC = File.CreateText("CalificacionesFinalesISC.txt");
 
+                    ArchivoCalificacionesFinalesISC.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+                    ArchivoCalificacionesFinalesISC.WriteLine("|\t\t\t\t\t\tProgramacion\t\t\t\t\t|");
+                    ArchivoCalificacionesFinalesISC.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+                    ArchivoCalificacionesFinalesISC.WriteLine("|\t\t\t\t\t\tCuestionario\t\t\t\t\t|");
+                    ArchivoCalificacionesFinalesISC.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+                    ArchivoCalificacionesFinalesISC.WriteLine("|Programa educativo:\t\t|Ingenieria en Energias Renovables\t\t|\tSemestre:\t\t|Primero\t|");
+                    ArchivoCalificacionesFinalesISC.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+                    ArchivoCalificacionesFinalesISC.WriteLine("|Nombre del docente:\t\t|MIDS. Adrian Chávez Cruz \t\t|\tClave de grupo:\t\t|1\t|");
+                    ArchivoCalificacionesFinalesISC.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+                    ArchivoCalificacionesFinalesISC.WriteLine("|Nombre del (la) Estudiante:\t\t|Me Nane\t\t|\tFecha de aplicacion:\t\t|4 de enero\t|");
+                    ArchivoCalificacionesFinalesISC.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+                    ArchivoCalificacionesFinalesISC.WriteLine("|        Evidencia:\t\t|Proyecto\t\t|\tDuracion:\t\t|NA\t|");
+                    ArchivoCalificacionesFinalesISC.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+                    ArchivoCalificacionesFinalesISC.WriteLine("|Copetencia:\t\t\t\t\t\t\t\t\t|");
+                    ArchivoCalificacionesFinalesISC.WriteLine("----------------------------------------------------------------------------------------------------------------------\n\n");
+
+                    ArchivoCalificacionesFinalesISC.WriteLine("----------------------------------------------------------------------------------------------------------------------");
                     ArchivoCalificacionesFinalesISC.WriteLine("Nombre del alumno\t|\tCalificación U1\t|\tCalificación U2\t\t|\tCalificación U3\t\t|\tCalificación U4\t\t|\tPromedio\t|");
+                    ArchivoCalificacionesFinalesISC.WriteLine("----------------------------------------------------------------------------------------------------------------------");
 
                     StreamReader LeerArchivoAlumnos = new StreamReader("NomAlumnos.txt");
                     StreamReader LeerArchivoCalUni1 = new StreamReader("CalUni1.txt");
@@ -97,6 +114,20 @@ namespace CalificacionesISC
                         lineaCalUni3 = LeerArchivoCalUni3.ReadLine();
                         lineaCalUni4 = LeerArchivoCalUni4.ReadLine();
                     }
+                    ArchivoCalificacionesFinalesISC.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+                    ArchivoCalificacionesFinalesISC.WriteLine("\t\t\t\t''HAS LLEGADO AL FINAL DE LA MATERIA DE PROGRAMACIÓN''");
+                    ArchivoCalificacionesFinalesISC.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+
+                    ArchivoCalificacionesFinalesISC.WriteLine("\n\n----------------------------------------------------------------------------------------------------------------------");
+                    ArchivoCalificacionesFinalesISC.WriteLine("|Evidencia de \t\t|\t%\t|\tIndicadores de alcanze\t|\tMetodo de evaluacion\t|");
+                    ArchivoCalificacionesFinalesISC.WriteLine("|                       |               |--------------------------------------------------------------");
+                    ArchivoCalificacionesFinalesISC.WriteLine("| Aprendizaje\t\t|\t\t|  A  |  B  |  C  |  D  |  E  |  F  |Instrumento    | P | C | A |");
+                    ArchivoCalificacionesFinalesISC.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+                    ArchivoCalificacionesFinalesISC.WriteLine("| Evaluacion Escrita\t|\t50\t|     |     |     |     |     |    |Cuestionario    |   | X |   |");
+                    ArchivoCalificacionesFinalesISC.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+
+
+
                     LeerArchivoAlumnos.Close();
                     LeerArchivoCalUni1.Close();
                     LeerArchivoCalUni2.Close();
@@ -142,7 +173,7 @@ namespace CalificacionesISC
         private static void AgregarCalificaciones()
         {
             int Opcion;
-            bool HayAlumnos = true;
+            bool HayAlumnos = false;
             do
             {
                 Console.Clear();
@@ -192,9 +223,10 @@ namespace CalificacionesISC
                     StreamReader LeerAlumnos = new StreamReader("NomAlumnos.txt");
                     string linea=LeerAlumnos.ReadLine();
                     StreamWriter CrearArchivoCalificacionesUnidad1= File.CreateText("CalUni1.txt");
+                    Console.Clear();
+
                     while (linea != null)
                     {
-                        Console.Clear();
                         int Calificacion;
 
                         do
@@ -219,9 +251,10 @@ namespace CalificacionesISC
                     StreamReader LeerAlumnos = new StreamReader("NomAlumnos.txt");
                     string linea = LeerAlumnos.ReadLine();
                     StreamWriter CrearArchivoCalificacionesUnidad2 = File.CreateText("CalUni2.txt");
+                    Console.Clear();
+
                     while (linea != null)
                     {
-                        Console.Clear();
                         int Calificacion;
 
                         do
@@ -246,9 +279,10 @@ namespace CalificacionesISC
                     StreamReader LeerAlumnos = new StreamReader("NomAlumnos.txt");
                     string linea = LeerAlumnos.ReadLine();
                     StreamWriter CrearArchivoCalificacionesUnidad3 = File.CreateText("CalUni3.txt");
+                    Console.Clear();
+
                     while (linea != null)
                     {
-                        Console.Clear();
                         int Calificacion;
 
                         do
@@ -273,9 +307,10 @@ namespace CalificacionesISC
                     StreamReader LeerAlumnos = new StreamReader("NomAlumnos.txt");
                     string linea = LeerAlumnos.ReadLine();
                     StreamWriter CrearArchivoCalificacionesUnidad4 = File.CreateText("CalUni4.txt");
+                    Console.Clear();
+
                     while (linea != null)
                     {
-                        Console.Clear();
                         int Calificacion;
 
                         do
