@@ -350,7 +350,6 @@ namespace CalificacionesISC
 
             Main();
         }
-    
 
         private static void AgregarAlumnos()
         {
